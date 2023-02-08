@@ -13,7 +13,7 @@ const Admin = () => {
 	const { currentUser } = useAuth();
 	const navigate = useNavigate();
 	const [data, setdata] = useState([]);
-	const [loading, setloading] = useState(true);
+	const [loading, setloading] = useState(false);
 	const logOut = () => {
 		toast.promise(
 			signOut(auth).catch((error) => {
