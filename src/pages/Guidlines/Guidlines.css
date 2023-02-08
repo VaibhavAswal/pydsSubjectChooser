@@ -1,0 +1,27 @@
+.guidlines {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 2rem 8vw;
+}
+
+.guidlines ul {
+	margin-top: 2rem;
+	padding: 1rem;
+}
+.guidlines li {
+	margin-bottom: 1rem;
+}
+@media only screen and (max-width: 1240px) {
+	.guidlines {
+		padding: 2rem;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.guidlines {
+		padding: 1rem;
+	}
+}

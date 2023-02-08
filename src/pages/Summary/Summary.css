@@ -1,0 +1,57 @@
+.SummaryPage {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 2rem 8vw;
+}
+
+.SummaryPage h2 {
+	margin-bottom: 1.5rem;
+}
+
+.summaryBlock {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0.5rem;
+	border: 1px solid var(--altText);
+	width: 100%;
+	border-radius: 10px;
+	gap: 1rem;
+}
+
+.summaryBlock p:nth-child(1) {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.summaryBlock p:nth-child(2) {
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.submitFinal {
+	background: var(--primary2);
+	padding: 0.75rem 1.2rem;
+	color: var(--textColor);
+	font-size: 1rem;
+	font-weight: 500;
+	border-radius: 15px;
+	cursor: pointer;
+	border: 2px solid var(--primary1);
+	outline: none;
+}
+
+@media only screen and (max-width: 1240px) {
+	.SummaryPage {
+		padding: 2rem;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.SummaryPage {
+		padding: 1rem;
+	}
+}

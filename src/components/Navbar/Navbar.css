@@ -1,0 +1,161 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 5rem;
+	position: sticky;
+	top: 0;
+	width: 100vw;
+	z-index: 1000;
+}
+
+.navLeft {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 8vw;
+}
+
+.navLeft > p {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.4rem;
+}
+
+.navRight {
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	padding-right: 8vw;
+}
+
+.navRight > .active {
+	background: linear-gradient(90deg, var(--primary1) 0%, var(--primary2) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-weight: 600;
+	border-bottom: 1px solid var(--textColor);
+}
+
+.navRight > a {
+	text-decoration: none;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.4rem;
+	color: var(--textColor);
+	border-bottom: 1px solid transparent;
+	transition: all 0.1s;
+}
+
+.navHidden {
+	backdrop-filter: blur(10px);
+	background-color: rgba(0, 0, 0, 0.478);
+}
+
+.navMenu {
+	display: none;
+	padding-right: 2rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.navMenu > img {
+	width: 2rem;
+}
+
+.nameMenuOpen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000000;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.445);
+	backdrop-filter: blur(10px);
+	transform: translateY(-100vh);
+	transition: 0.3s ease-in;
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navMenuOpenshow {
+	transform: translateY(0);
+	border-radius: 0;
+}
+
+.navMenuCloseButton {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+}
+
+.navMenuCloseButton > img {
+	width: 2rem;
+}
+
+.mobileMenu {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.mobileMenu > a {
+	font-weight: 600;
+	font-style: normal;
+	font-size: 2rem;
+	width: max-content;
+	border-bottom: 2px solid transparent;
+	color: var(--textColor);
+	text-decoration: none;
+}
+
+.mobileMenu > .active {
+	border-bottom: 2px solid white;
+	background: linear-gradient(90deg, var(--primary1) 0%, var(--primary2) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.mobileMenu > p:hover {
+	background: linear-gradient(90deg, var(--primary1) 0%, var(--primary2) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+@media only screen and (max-width: 1240px) {
+	.navLeft {
+		padding-left: 2rem;
+	}
+	.navRight {
+		padding-right: 2rem;
+	}
+}
+
+@media only screen and (max-width: 935px) {
+	.navRight {
+		display: none;
+	}
+	.navMenu {
+		display: flex;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.navbar {
+		height: 4rem;
+	}
+	.navLeft {
+		padding-left: 1rem;
+	}
+	.navMenu {
+		padding-right: 1rem;
+	}
+	.navLeft > img {
+		width: 3.5rem;
+	}
+}

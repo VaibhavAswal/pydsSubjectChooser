@@ -1,0 +1,70 @@
+.SubjectsPage {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 2rem 8vw;
+}
+
+.subjectsIntro {
+	font-size: 1rem;
+	font-weight: 300;
+}
+
+.subjectsIntro h2 {
+	margin-bottom: 0.5rem;
+	color: var(--textColor);
+}
+
+.subjectsIntro p {
+	color: var(--altText);
+}
+
+.subjectGroup {
+	width: 100%;
+	padding: 0.5rem;
+	border-radius: 10px;
+	border: 1px solid var(--borderColor);
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.warning {
+	color: var(--primary1);
+}
+
+.subjectGroup .active {
+	border-color: var(--primary2);
+}
+
+.Striked {
+	text-decoration: line-through;
+	color: var(--altText);
+	font-weight: 100;
+}
+.SubmitSubjects {
+	background: var(--primary2);
+	padding: 0.75rem 1.2rem;
+	color: var(--textColor);
+	font-size: 1rem;
+	font-weight: 500;
+	border-radius: 15px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+@media only screen and (max-width: 1240px) {
+	.SubjectsPage {
+		padding: 2rem;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.SubjectsPage {
+		padding: 1rem;
+	}
+}
