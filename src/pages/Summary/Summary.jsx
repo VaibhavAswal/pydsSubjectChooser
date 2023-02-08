@@ -1,11 +1,58 @@
-import { useSelector } from "react-redux";
+import { db } from "../../firebase/firebase";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
+import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { student } from "../../store/store";
+import { useEffect } from "react";
 import "./Summary.css";
+import { useNavigate } from "react-router-dom";
 
 const Summary = () => {
 	const studentData = useSelector((state) => state);
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
 	const submit = () => {
-		confirm("Confirm form submission?");
+		if (confirm("Confirm form submission?")) {
+			const time = JSON.stringify(new Date());
+			const promise = () => {
+				return new Promise((resolve, reject) => {
+					dispatch(student.setTime(time));
+					const ref = doc(db, "data", "data");
+					updateDoc(ref, {
+						data: arrayUnion(studentData),
+					})
+						.then(resolve())
+						.catch((err) => reject(err.message));
+				});
+			};
+			toast.promise(promise(), {
+				loading: "uploading...",
+				success: () => {
+					navigate("/");
+					dispatch(student.clear());
+					return "uploaded";
+				},
+				error: (err) => {
+					return `${err}`;
+				},
+			});
+		} else {
+			return;
+		}
 	};
+	useEffect(() => {
+		if (
+			!studentData.firstName &&
+			!studentData.lastName &&
+			!studentData.group1 &&
+			!studentData.group2 &&
+			!studentData.group3 &&
+			!studentData.group4
+		) {
+			navigate("/");
+		}
+	}, []);
 	return (
 		<div className="SummaryPage">
 			<h2>Summary</h2>

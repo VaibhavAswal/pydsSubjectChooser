@@ -1,29 +1,14 @@
-.Home {
+.login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: calc(var(--vh) - 5rem);
-	width: 100vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
-	padding: 2rem 8vw;
-	gap: 2rem;
-}
-
-.HomeIntro {
-	color: var(--altText);
-}
-
-.HomeInputs {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
 	gap: 1rem;
-	max-width: 25rem;
+	padding: 2rem 8vw;
 }
 
-.HomeInputs input {
+.login input {
 	background: var(--borderColor);
 	border: none;
 	outline: none;
@@ -33,13 +18,14 @@
 	font-size: 1rem;
 	font-weight: 400;
 	color: var(--textColor);
+	max-width: 25rem;
 }
 
-.HomeInputs input::placeholder {
+.login input::placeholder {
 	color: var(--altText);
 }
 
-.HomeContinue {
+.login button {
 	background: var(--primary2);
 	padding: 0.75rem 1.2rem;
 	color: var(--textColor);
@@ -51,19 +37,19 @@
 	outline: none;
 }
 
-.HomeContinue:disabled {
-	background: var(--altText);
+.login button:disabled {
+	background: var(--borderColor);
 	cursor: not-allowed;
 }
 
 @media only screen and (max-width: 1240px) {
-	.Home {
+	.login {
 		padding: 2rem;
 	}
 }
 
 @media only screen and (max-width: 450px) {
-	.Home {
+	.login {
 		height: calc(var(--vh) - 4rem);
 		padding: 1rem;
 	}

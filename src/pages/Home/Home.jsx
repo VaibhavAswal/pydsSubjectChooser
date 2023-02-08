@@ -17,9 +17,7 @@ const Home = () => {
 	};
 	return (
 		<div className="Home">
-			<div className="HomeIntro">
-				Enter your details to continue.. and or kux details jo daaalni h yaha
-			</div>
+			<div className="HomeIntro">Enter your details to continue..</div>
 			<div className="HomeInputs">
 				<input
 					type="text"

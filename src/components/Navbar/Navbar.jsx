@@ -44,10 +44,10 @@ const Navbar = () => {
 						Guidlines
 					</Link>
 					<Link
-					// to="/query"
-					// className={`${pathname === "/query" ? "active" : ""}`}
+						to="/admin/login"
+						className={`${pathname.includes("admin") ? "active" : ""}`}
 					>
-						Ask Query
+						Admin Login
 					</Link>
 				</div>
 				<div className="navMenu">
@@ -80,11 +80,11 @@ const Navbar = () => {
 						Guidlines
 					</Link>
 					<Link
-					// to="/query"
-					// className={`${pathname === "/query" ? "active" : ""}`}
-					// onClick={() => setNavOpen("")}
+						to="/admin/login"
+						className={`${pathname.includes("admin") ? "active" : ""}`}
+						onClick={() => setNavOpen("")}
 					>
-						Ask Query
+						Admin Login
 					</Link>
 				</div>
 			</div>

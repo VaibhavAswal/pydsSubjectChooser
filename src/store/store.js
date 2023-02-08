@@ -11,6 +11,7 @@ const studentData = createSlice({
 		group3: "",
 		group4: "",
 		compulsory: "English",
+		time: "",
 	},
 	reducers: {
 		setFirstName(state, action) {
@@ -33,6 +34,19 @@ const studentData = createSlice({
 		},
 		setGroup4(state, action) {
 			state.group4 = action.payload;
+		},
+		setTime(state, action) {
+			state.time = action.payload;
+		},
+		clear(state, payload) {
+			state.firstName = "";
+			state.lastName = "";
+			state.group1 = "";
+			state.group2 = "";
+			state.group3 = "";
+			state.group4 = "";
+			state.time = "";
+			state.goal = "";
 		},
 	},
 });

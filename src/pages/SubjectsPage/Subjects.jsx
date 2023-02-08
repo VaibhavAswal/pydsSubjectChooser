@@ -87,10 +87,8 @@ const Subjects = () => {
 		) {
 			toast.error(`Math is compulsory for ${studentData.goal}, cannot change`);
 			return;
-		} else if (option === "Computer Science") {
-			dispatch(student.setGroup4(option));
-			dispatch(student.setGroup1("Math"));
-			toast("Select math with Computer Science");
+		} else if (option === "Computer Science" && studentData.group1 !== "Math") {
+			toast("Select Math in group 1 to opt for Computer Science");
 		} else {
 			if (option === "Math" && studentData.group1 === "Math") {
 				dispatch(student.setGroup1(""));

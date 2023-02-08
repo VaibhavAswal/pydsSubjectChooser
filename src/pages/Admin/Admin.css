@@ -1,0 +1,76 @@
+.Admin {
+	min-height: calc(var(--vh) - 5rem);
+	width: 100vw;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	padding: 2rem 8vw;
+	gap: 2rem;
+	margin-bottom: 5rem;
+}
+
+.adminNav {
+	position: fixed;
+	bottom: 0.5rem;
+	left: 0;
+	width: calc(100vw - 2rem);
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.219);
+	backdrop-filter: blur(10px);
+	border-radius: 50px;
+	padding: 0.5rem;
+	margin: 0 1rem;
+}
+
+.adminNav button {
+	background: var(--primary1);
+	padding: 0.75rem 1.2rem;
+	color: var(--textColor);
+	font-size: 1rem;
+	font-weight: 500;
+	border-radius: 15px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+
+.adminData {
+	border-bottom: 1px solid var(--altText);
+	width: 100%;
+	padding-bottom: 0.5rem;
+}
+
+.adminData div {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 1rem;
+}
+
+.csvButton {
+	background: var(--primary1);
+	padding: 0.75rem 1.2rem;
+	color: var(--textColor);
+	font-size: 1rem;
+	font-weight: 500;
+	border-radius: 15px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	text-decoration: none;
+}
+@media only screen and (max-width: 1240px) {
+	.Admin {
+		padding: 2rem;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.Admin {
+		min-height: calc(var(--vh) - 4rem);
+		padding: 1rem;
+	}
+}
