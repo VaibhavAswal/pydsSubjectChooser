@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/authcontext";
 import { signOut } from "@firebase/auth";
 import { toast } from "react-hot-toast";
 import { auth } from "../../firebase/firebase";
