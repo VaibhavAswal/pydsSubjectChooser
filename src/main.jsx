@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import { AuthProvider } from "./context/AuthContext.jsx";
+import { AuthProvider } from "./context/authContext.jsx";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
