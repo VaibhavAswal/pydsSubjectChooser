@@ -34,20 +34,29 @@ const Admin = () => {
 	}, [currentUser]);
 	useEffect(() => {
 		const unsub = () => {
-			onSnapshot(
-				doc(db, "data", "data"),
-				(doc) => {
-					const a = doc.data();
-					setdata(a.data);
-					setloading(false);
-				},
-				(err) => {
-					toast.error(err.message);
-				}
-			);
+			try {
+				onSnapshot(
+					doc(db, "data", "data"),
+					(doc) => {
+						const a = doc.data();
+						setdata(a.data);
+						setloading(false);
+					},
+					(error) => {
+						toast.error(error.message);
+						setloading(false);
+					}
+				);
+			} catch (error) {
+				toast.error(error.message);
+			}
 		};
 		return unsub;
 	}, []);
+	useEffect(() => {
+		console.log(data);
+	}, [data]);
+
 	const headers = [
 		{ label: "First Name", key: "firstName" },
 		{ label: "Last Name", key: "lastName" },
