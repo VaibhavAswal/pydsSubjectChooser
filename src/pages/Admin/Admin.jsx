@@ -53,9 +53,6 @@ const Admin = () => {
 		};
 		return unsub();
 	}, []);
-	useEffect(() => {
-		console.log(data);
-	}, [data]);
 
 	const headers = [
 		{ label: "First Name", key: "firstName" },
@@ -93,14 +90,16 @@ const Admin = () => {
 				})}
 			<div className="adminNav">
 				<button onClick={logOut}>logout</button>
-				<CSVLink
-					filename="subjectsData"
-					data={data}
-					headers={headers}
-					className="csvButton"
-				>
-					download csv
-				</CSVLink>
+				{!loading && (
+					<CSVLink
+						filename="subjectsData"
+						data={data}
+						headers={headers}
+						className="csvButton"
+					>
+						download csv
+					</CSVLink>
+				)}
 			</div>
 		</div>
 	);
