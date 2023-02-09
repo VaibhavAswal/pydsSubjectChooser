@@ -51,7 +51,7 @@ const Admin = () => {
 				toast.error(error.message);
 			}
 		};
-		return unsub;
+		return unsub();
 	}, []);
 	useEffect(() => {
 		console.log(data);
