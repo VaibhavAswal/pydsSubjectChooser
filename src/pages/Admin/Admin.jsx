@@ -13,7 +13,7 @@ const Admin = () => {
 	const { currentUser } = useAuth();
 	const navigate = useNavigate();
 	const [data, setdata] = useState([]);
-	const [loading, setloading] = useState(false);
+	const [loading, setloading] = useState(true);
 	const logOut = () => {
 		toast.promise(
 			signOut(auth).catch((error) => {
@@ -34,11 +34,17 @@ const Admin = () => {
 	}, [currentUser]);
 	useEffect(() => {
 		const unsub = () => {
-			onSnapshot(doc(db, "data", "data"), (doc) => {
-				const a = doc.data();
-				setdata(a.data);
-				setloading(false);
-			});
+			onSnapshot(
+				doc(db, "data", "data"),
+				(doc) => {
+					const a = doc.data();
+					setdata(a.data);
+					setloading(false);
+				},
+				(err) => {
+					toast.error(err.message);
+				}
+			);
 		};
 		return unsub;
 	}, []);
