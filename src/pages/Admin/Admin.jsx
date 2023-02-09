@@ -68,6 +68,7 @@ const Admin = () => {
 	return (
 		<div className="Admin">
 			{loading && <h3>Loading...</h3>}
+			{data && !loading && data.length === 0 && <h2>No data recieved yet</h2>}
 			{data &&
 				data.length > 0 &&
 				data.map((detail, id) => {
