@@ -84,9 +84,16 @@ const Summary = () => {
 				<p>Compulsory Sunject:</p>
 				<p>{studentData.compulsory}</p>
 			</div>
-
-			<div className="submitFinal" onClick={submit}>
-				Submit
+			<div className="summaryButtons">
+				<div className="submitFinal" onClick={submit}>
+					Submit
+				</div>
+				<button
+					className="submitFinal"
+					onClick={() => navigate("/register/subjects")}
+				>
+					Back
+				</button>
 			</div>
 		</div>
 	);

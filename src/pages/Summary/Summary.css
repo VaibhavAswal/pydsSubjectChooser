@@ -44,6 +44,13 @@
 	outline: none;
 }
 
+.summaryButtons {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 1240px) {
 	.SummaryPage {
 		padding: 2rem;
