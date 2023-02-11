@@ -39,7 +39,7 @@ const Admin = () => {
 					doc(db, "data", "data"),
 					(doc) => {
 						const a = doc.data();
-						setdata(a.data);
+						setdata(a.data ? a.data : []);
 						setloading(false);
 					},
 					(error) => {
