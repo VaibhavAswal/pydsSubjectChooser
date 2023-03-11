@@ -12,7 +12,7 @@ const Home = () => {
 			toast.error("Please fill all the field");
 			return;
 		} else {
-			navigate("/register/goals");
+			navigate("/register/guidlines");
 		}
 	};
 	return (

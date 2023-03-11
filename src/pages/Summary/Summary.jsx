@@ -60,10 +60,10 @@ const Summary = () => {
 				<p>Name:</p>
 				<p>{`${studentData.firstName} ${studentData.lastName}`}</p>
 			</div>
-			<div className="summaryBlock">
+			{/* <div className="summaryBlock">
 				<p>Goal:</p>
 				<p>{studentData.goal}</p>
-			</div>
+			</div> */}
 			<div className="summaryBlock">
 				<p>Group 1:</p>
 				<p>{studentData.group1}</p>

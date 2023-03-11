@@ -34,7 +34,7 @@ function App() {
 					<Route exact path="/register/goals" element={<GoalSelector />} />
 					<Route exact path="/register/subjects" element={<Subjects />} />
 					<Route exact path="/register/summary" element={<Summary />} />
-					<Route exact path="/guidlines" element={<Guidlines />} />
+					<Route exact path="/register/guidlines" element={<Guidlines />} />
 					<Route exact path="/admin/login" element={<Login />} />
 					<Route exact path="/admin/panel" element={<Admin />} />
 				</Routes>

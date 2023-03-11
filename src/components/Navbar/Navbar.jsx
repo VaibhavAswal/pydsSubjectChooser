@@ -37,12 +37,12 @@ const Navbar = () => {
 					>
 						Register
 					</Link>
-					<Link
-						to="/guidlines"
-						className={`${pathname === "/guidlines" ? "active" : ""}`}
+					{/* <Link
+						to="/register/guidlines"
+						className={`${pathname === "/register/guidlines" ? "active" : ""}`}
 					>
 						Guidlines
-					</Link>
+					</Link> */}
 					<Link
 						to="/admin/login"
 						className={`${pathname.includes("admin") ? "active" : ""}`}
@@ -72,13 +72,13 @@ const Navbar = () => {
 					>
 						Register
 					</Link>
-					<Link
-						to="/guidlines"
-						className={`${pathname === "/guidlines" ? "active" : ""}`}
+					{/* <Link
+						to="/register/guidlines"
+						className={`${pathname === "/register/guidlines" ? "active" : ""}`}
 						onClick={() => setNavOpen("")}
 					>
 						Guidlines
-					</Link>
+					</Link> */}
 					<Link
 						to="/admin/login"
 						className={`${pathname.includes("admin") ? "active" : ""}`}

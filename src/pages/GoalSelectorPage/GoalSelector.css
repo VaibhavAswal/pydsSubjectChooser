@@ -26,6 +26,7 @@
 	gap: 0.25rem;
 	width: 100%;
 	max-width: 30rem;
+	cursor: pointer;
 }
 
 .goalBox div {

@@ -5,7 +5,7 @@ const studentData = createSlice({
 	initialState: {
 		firstName: "",
 		lastName: "",
-		goal: "",
+		goal: "other",
 		group1: "",
 		group2: "",
 		group3: "",

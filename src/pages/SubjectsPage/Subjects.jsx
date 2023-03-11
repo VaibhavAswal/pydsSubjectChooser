@@ -11,8 +11,8 @@ const Subjects = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (!studentData.goal) {
-			navigate("/register/goals");
+		if (!studentData.firstName) {
+			navigate("/");
 		}
 	}, []);
 
@@ -49,7 +49,12 @@ const Subjects = () => {
 			dispatch(student.setGroup2(option));
 			dispatch(student.setGroup3("Accounts"));
 			toast.success("Accounts Auto selected with BSt.");
-		} else {
+		}else if ( option !== "BSt." && studentData.group3 === "Accounts") {
+			toast.error("BSt. is compulsory with Accounts");
+			return;
+		} 		else if (option === "Economics" && studentData.group4 === "Economics") {
+			toast.error("Economics already selected in group 4");
+		}else {
 			dispatch(student.setGroup2(option));
 		}
 	};
@@ -64,7 +69,12 @@ const Subjects = () => {
 		} else if (studentData.goal === "B.Com (Honors)" && option !== "Accounts") {
 			toast.error("Accounts is compulsory for B.Com (Honors), cannot change");
 			return;
-		} else if (option === "Accounts" && studentData.group2 !== "BSt.") {
+		}else if ( option !== "Accounts" && studentData.group2 === "BSt.") {
+			toast.error("Accounts is compulsory with BSt.");
+			return;
+		}
+
+		 else if (option === "Accounts" && studentData.group2 !== "BSt.") {
 			dispatch(student.setGroup3(option));
 			dispatch(student.setGroup2("BSt."));
 			toast.success("BSt. auto selected with accounts");
@@ -89,7 +99,11 @@ const Subjects = () => {
 			return;
 		} else if (option === "Computer Science" && studentData.group1 !== "Math") {
 			toast("Select Math in group 1 to opt for Computer Science");
-		} else {
+		} 
+		else if (option === "Economics" && studentData.group2 === "Economics") {
+			toast.error("Economics already selected in group 2");
+		}
+		else {
 			if (option === "Math" && studentData.group1 === "Math") {
 				dispatch(student.setGroup1(""));
 				toast("Removed math from group 1");
@@ -204,7 +218,7 @@ const Subjects = () => {
 					<div
 						className={`${
 							(studentData.goal === "JEE" ||
-								studentData.goal === "Neet" ||
+								studentData.goal === "Neet" ||studentData.group3 === "Accounts" || studentData.group4 === "Economics"||
 								studentData.goal === "B.Com (Honors)") &&
 							"Striked"
 						}`}
@@ -250,7 +264,7 @@ const Subjects = () => {
 					onClick={() => setG2("Chemistry")}
 				>
 					<div
-						className={`${studentData.goal === "B.Com (Honors)" && "Striked"}`}
+						className={`${(studentData.goal === "B.Com (Honors)" || studentData.group3 === "Accounts") && "Striked"}`}
 					>
 						<input
 							type="radio"
@@ -277,7 +291,7 @@ const Subjects = () => {
 					<div
 						className={` ${
 							(studentData.goal === "JEE" ||
-								studentData.goal === "Neet" ||
+								studentData.goal === "Neet" ||studentData.group2 === "BSt."||
 								studentData.goal === "B.Com (Honors)") &&
 							"Striked"
 						}`}
@@ -295,7 +309,7 @@ const Subjects = () => {
 					onClick={() => setG3("Physics")}
 				>
 					<div
-						className={` ${studentData.goal === "B.Com (Honors)" && "Striked"}`}
+						className={` ${(studentData.goal === "B.Com (Honors)" || studentData.group2 === "BSt.") && "Striked"}`}
 					>
 						<input
 							type="radio"
@@ -342,7 +356,7 @@ const Subjects = () => {
 					<div
 						className={` ${
 							(studentData.goal === "JEE" ||
-								studentData.goal === "Neet" ||
+								studentData.goal === "Neet" ||studentData.group2 === "BSt."||
 								studentData.goal === "B.Com (Honors)") &&
 							"Striked"
 						}`}
@@ -369,7 +383,7 @@ const Subjects = () => {
 				>
 					<div
 						className={` ${
-							((studentData.goal === "JEE" && studentData.group1 !== "Math") ||
+							((studentData.goal === "JEE" && studentData.group1 !== "Math") ||studentData.group2 === "Economics"||
 								studentData.goal === "Neet") &&
 							"Striked"
 						}`}
@@ -413,8 +427,8 @@ const Subjects = () => {
 				>
 					<div
 						className={` ${
-							((studentData.goal === "JEE" && studentData.group1 !== "Math") ||
-								studentData.goal === "Neet") &&
+						studentData.group1 !== "Math"
+								&&
 							"Striked"
 						}`}
 					>
@@ -473,8 +487,8 @@ const Subjects = () => {
 				>
 					<div
 						className={` ${
-							((studentData.goal === "JEE" && studentData.group1 === "Math") ||
-								studentData.goal === "Neet") &&
+							studentData.group1 === "Math"
+							&&
 							"Striked"
 						}`}
 					>

@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import "./Guidlines.css";
 
 const Guidlines = () => {
+	const navigate = useNavigate();
+	const proceed = ()=>{
+			navigate("/register/subjects");
+	}
 	return (
 		<div className="guidlines">
 			<ul>
@@ -22,6 +27,12 @@ const Guidlines = () => {
 					To appear in JEE Main taking Physics, Chemistry and Math compulsory.
 				</li>
 			</ul>
+			<button
+				className="guidlinesButton"
+				onClick={proceed}
+			>
+				Next
+			</button>
 		</div>
 	);
 };
